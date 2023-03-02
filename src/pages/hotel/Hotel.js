@@ -38,7 +38,7 @@ const Hotel = () => {
   const [open, setOpen] = useState(false);
 
   const { data, loading, error } = useFetch(
-    `http://localhost:8000/api/hotels/find/${id}`
+    `https://bookingapi-lctl.onrender.com/api/hotels/find/${id}`
   );
   console.log("data", data);
 

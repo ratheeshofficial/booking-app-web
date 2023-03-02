@@ -21,7 +21,7 @@ import useFetch from "../../hooks/useFetch";
 
 const RoomTable = () => {
   const { data, loading, error, reFetch } = useFetch(
-    `http://localhost:8000/api/hotels`
+    `https://bookingapi-lctl.onrender.com/api/hotels`
   );
   console.log("Hotel data", data);
 
@@ -43,7 +43,7 @@ const RoomTable = () => {
       });
       console.log("hotelId", hotelId);
       await axios.delete(
-        `http://localhost:8000/api/${path}/${roomId}/${hotelId._id}`
+        `https://bookingapi-lctl.onrender.com/api/${path}/${roomId}/${hotelId._id}`
       );
       setRowData(rowData.filter((item) => item._id !== roomId));
     } catch (error) {
@@ -52,7 +52,7 @@ const RoomTable = () => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:8000/api/${path}/`)
+    fetch(`https://bookingapi-lctl.onrender.com/api/${path}/`)
       .then((res) => res.json())
       .then((rowData) => setRowData(rowData));
   }, []);

@@ -53,7 +53,10 @@ const SignupForm = () => {
       // alert(JSON.stringify(values));
       try {
         await axios
-          .post("http://localhost:8000/api/auth/register", values)
+          .post(
+            "https://bookingapi-lctl.onrender.com/api/auth/register",
+            values
+          )
           .then((res) => {
             console.log(res, "LLLLLLLLLLLLLLLLLL");
             res.data.success === true &&

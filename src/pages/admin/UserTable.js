@@ -34,7 +34,7 @@ const UserTable = () => {
     console.log("id", id);
     try {
       await axios
-        .delete(`http://localhost:8000/api/${path}/${id}`)
+        .delete(`https://bookingapi-lctl.onrender.com/api/${path}/${id}`)
         .then((res) => console.log("res", res));
       setRowData(rowData.filter((item) => item._id !== id));
     } catch (error) {
@@ -43,7 +43,7 @@ const UserTable = () => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:8000/api/${path}/`)
+    fetch(`https://bookingapi-lctl.onrender.com/api/${path}/`)
       .then((res) => res.json())
       .then((rowData) => setRowData(rowData));
   }, []);

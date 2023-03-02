@@ -45,7 +45,7 @@ const CreateHotelModal = ({ isOpen, onOpen, onClose }) => {
       // alert(JSON.stringify(values, null, 2));
       try {
         await axios
-          .post("http://localhost:8000/api/hotels", values)
+          .post("https://bookingapi-lctl.onrender.com/api/hotels", values)
           .then((res) => {
             console.log(res, "resssssssssssssssss");
           })
@@ -60,7 +60,7 @@ const CreateHotelModal = ({ isOpen, onOpen, onClose }) => {
   });
 
   const { data, loading, error, reFetch } = useFetch(
-    `http://localhost:8000/api/rooms`
+    `https://bookingapi-lctl.onrender.com/api/rooms`
   );
   //   console.log("data", data);
   return (

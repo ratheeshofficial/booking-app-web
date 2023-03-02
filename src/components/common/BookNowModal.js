@@ -45,7 +45,7 @@ const BookNowModal = ({ hotelId }) => {
   };
 
   const { data, loading, error } = useFetch(
-    `http://localhost:8000/api/hotels/room/${hotelId}`
+    `https://bookingapi-lctl.onrender.com/api/hotels/room/${hotelId}`
   );
   console.log("data", data);
 
@@ -93,7 +93,7 @@ const BookNowModal = ({ hotelId }) => {
       await Promise.all(
         selectedRooms.map((roomId) => {
           const res = axios.put(
-            `http://localhost:8000/api/rooms/availabilty/${roomId}`,
+            `https://bookingapi-lctl.onrender.com/api/rooms/availabilty/${roomId}`,
             { dates: allDates }
           );
           return res.data;

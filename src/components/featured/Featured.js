@@ -3,7 +3,7 @@ import "./featured.css";
 
 const Featured = () => {
   const { data, loading, error } = useFetch(
-    "http://localhost:8000/api/hotels/countByCity?cities=chennai,nagercoil,london"
+    "https://bookingapi-lctl.onrender.com/api/hotels/countByCity?cities=chennai,nagercoil,london"
   );
   // console.log("data", data);
   return (

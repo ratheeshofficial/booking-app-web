@@ -35,7 +35,9 @@ const HotelTable = () => {
   const deleteUser = async (id) => {
     console.log("id", id);
     try {
-      await axios.delete(`http://localhost:8000/api/${path}/${id}`);
+      await axios.delete(
+        `https://bookingapi-lctl.onrender.com/api/${path}/${id}`
+      );
       setRowData(rowData.filter((item) => item._id !== id));
     } catch (error) {
       console.log("error");
@@ -43,7 +45,7 @@ const HotelTable = () => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:8000/api/${path}`)
+    fetch(`https://bookingapi-lctl.onrender.com/api/${path}`)
       .then((res) => res.json())
       .then((rowData) => setRowData(rowData));
   }, []);

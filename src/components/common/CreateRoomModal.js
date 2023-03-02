@@ -21,7 +21,7 @@ import * as Yup from "yup";
 
 const CreateRoomModal = ({ isOpen, onOpen, onClose }) => {
   const { data, loading, error, reFetch } = useFetch(
-    `http://localhost:8000/api/hotels`
+    `https://bookingapi-lctl.onrender.com/api/hotels`
   );
 
   const formik = useFormik({
@@ -55,14 +55,17 @@ const CreateRoomModal = ({ isOpen, onOpen, onClose }) => {
 
       try {
         await axios
-          .post(`http://localhost:8000/api/rooms/${values.chooseHotel}`, {
-            title: values.title,
-            price: values.price,
-            maxPeople: values.maxPeople,
-            desc: values.desc,
-            chooseHotel: values.chooseHotel,
-            roomNumbers: roomIds,
-          })
+          .post(
+            `https://bookingapi-lctl.onrender.com/api/rooms/${values.chooseHotel}`,
+            {
+              title: values.title,
+              price: values.price,
+              maxPeople: values.maxPeople,
+              desc: values.desc,
+              chooseHotel: values.chooseHotel,
+              roomNumbers: roomIds,
+            }
+          )
           .then((res) => {
             console.log(res, "resssssssssssssssss");
           })
